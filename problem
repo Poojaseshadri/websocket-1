@@ -1,0 +1,12 @@
+Develop an API :
+Part A:
+HTML page:
+- Accepts a set of files as input
+    - file type: png, jpeg, pdf
+    - individual file size : Not more than 1MB
+    - Total file size : 10MB
+- The API implementation should accept the data as base64 encoded format
+- Send the file through a websocket
+Backend:
+- Form a file out of it 
+- Upload to a S3 bucket
