@@ -1,0 +1,21 @@
+2025-02-16 15:26:47,587 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-02-16 15:28:09,326 - INFO - WebSocket connection established
+2025-02-16 15:28:21,726 - ERROR - Error: 'file_name'
+2025-02-16 15:33:40,924 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-02-16 15:34:05,681 - INFO - WebSocket connection established
+2025-02-16 15:34:35,443 - ERROR - Error: An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+2025-02-16 15:37:58,012 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-02-16 15:38:05,218 - INFO - WebSocket connection established
+2025-02-16 15:38:22,018 - INFO - WebSocket connection closed
+2025-02-16 15:38:22,330 - INFO - WebSocket connection established
+2025-02-16 15:38:34,788 - ERROR - Error: Parameter validation failed:
+Invalid bucket name "pooja-websocket-files ": Bucket name must match the regex "^[a-zA-Z0-9.\-_]{1,255}$" or be an ARN matching the regex "^arn:(aws).*:(s3|s3-object-lambda):[a-z\-0-9]*:[0-9]{12}:accesspoint[/:][a-zA-Z0-9\-.]{1,63}$|^arn:(aws).*:s3-outposts:[a-z\-0-9]+:[0-9]{12}:outpost[/:][a-zA-Z0-9\-]{1,63}[/:]accesspoint[/:][a-zA-Z0-9\-]{1,63}$"
+2025-02-16 15:40:15,485 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-02-16 15:40:33,017 - INFO - WebSocket connection established
+2025-02-16 15:40:53,039 - ERROR - Error: Parameter validation failed:
+Invalid bucket name "arn:aws:s3:::pooja-websocket-files": Bucket name must match the regex "^[a-zA-Z0-9.\-_]{1,255}$" or be an ARN matching the regex "^arn:(aws).*:(s3|s3-object-lambda):[a-z\-0-9]*:[0-9]{12}:accesspoint[/:][a-zA-Z0-9\-.]{1,63}$|^arn:(aws).*:s3-outposts:[a-z\-0-9]+:[0-9]{12}:outpost[/:][a-zA-Z0-9\-]{1,63}[/:]accesspoint[/:][a-zA-Z0-9\-]{1,63}$"
+2025-02-16 15:43:26,873 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-02-16 15:43:34,224 - INFO - WebSocket connection established
+2025-02-16 15:43:50,438 - INFO - File photo_11zon.jpg uploaded successfully to S3
+2025-02-16 15:43:51,621 - INFO - File photo_11zon.jpg uploaded successfully to S3
+2025-02-16 15:47:15,231 - INFO - WebSocket connection closed

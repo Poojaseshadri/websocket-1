@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket File Upload</title>
+</head>
+<body>
+    <h2>Upload Files via WebSocket</h2>
+    <input type="file" id="fileInput" multiple>
+    <button onclick="uploadFiles()">Upload</button>
+    <div id="status"></div>
+
+    <script>
+        let socket = new WebSocket("ws://localhost:8000/upload");
+
+        socket.onopen = function() {
+            document.getElementById("status").innerHTML = "Connected to WebSocket";
+        };
+
+        socket.onmessage = function(event) {
+            document.getElementById("status").innerHTML += "<br>" + event.data;
+        };
+
+        socket.onclose = function() {
+            document.getElementById("status").innerHTML += "<br>Connection closed";
+        };
+
+        async function uploadFiles() {
+            let files = document.getElementById("fileInput").files;
+            let totalSize = 0;
+
+            for (let file of files) {
+                let fileSize = file.size;
+                if (fileSize > 1 * 1024 * 1024) {
+                    alert(`File ${file.name} exceeds 1MB limit`);
+                    continue;
+                }
+
+                totalSize += fileSize;
+                if (totalSize > 10 * 1024 * 1024) {
+                    alert("Total upload size exceeds 10MB");
+                    break;
+                }
+
+                let reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                    let base64Data = reader.result.split(',')[1];  // Extract Base64
+                    let fileData = {
+                        "file_name": file.name,
+                        "file_type": file.type,
+                        "file_content": base64Data
+                    };
+                    socket.send(JSON.stringify(fileData));
+                };
+            }
+        }
+    </script>
+</body>
+</html>
